@@ -4,7 +4,7 @@ import re
 import json
 
 def fetchData(path):
-    with open(path, "r", encoding="utf8") as f:
+    with open(str(path), "r", encoding="utf8") as f:
         raw = f.read()
         data = json.loads(raw)
 
@@ -38,7 +38,7 @@ def cleanData(data):
         # Put into color buckets
         colors = i['color_identity']
         if [] == colors:
-            colorless.append(i)
+            colorDict['colorless'].append(i)
             pass
         
         for color in colors:
