@@ -3,15 +3,14 @@
 import re
 import json
 
-def fetchData():
-    path = "cards.json"
+def fetchData(path):
     with open(path, "r", encoding="utf8") as f:
         raw = f.read()
         data = json.loads(raw)
 
     return data
 
-def cleanData():
+def cleanData(data):
     colorDict = {
         'W': [], # white
         'U': [], # blue
