@@ -21,9 +21,9 @@ def cleanData(data):
     }
 
     for i in data:
-
-        # Skip joke cards
-        if i['set_type'] == 'funny' or 	"memorabilia":
+        # Skip extra cards
+        st = i['set_type'] 
+        if st == 'funny' or st == "memorabilia":
             continue
 
         # Clean \n and sub out cardname 
@@ -37,11 +37,11 @@ def cleanData(data):
 
         # Put into color buckets
         colors = i['color_identity']
-        if [] == colors:
+        if not colors:
             colorDict['colorless'].append(i)
             continue
         
         for color in colors:
             colorDict[color].append(i)
-        
+
     return colorDict
