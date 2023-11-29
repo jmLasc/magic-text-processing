@@ -23,8 +23,8 @@ def cleanData(data):
     for i in data:
 
         # Skip joke cards
-        if i['set_type'] == 'funny':
-            pass
+        if i['set_type'] == 'funny' or 	"memorabilia":
+            continue
 
         # Clean \n and sub out cardname 
         if 'oracle_text' in i.keys():
@@ -33,13 +33,13 @@ def cleanData(data):
             text = re.sub(re.escape(i['name']), "CARDNAME", text)
             i['oracle_text'] = text
         else:
-            pass 
+            continue
 
         # Put into color buckets
         colors = i['color_identity']
         if [] == colors:
             colorDict['colorless'].append(i)
-            pass
+            continue
         
         for color in colors:
             colorDict[color].append(i)
