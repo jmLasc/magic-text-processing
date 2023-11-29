@@ -29,7 +29,7 @@ def cleanData(data):
         # Clean \n and sub out cardname 
         if 'oracle_text' in i.keys():
             text = i['oracle_text'] 
-            text = re.sub("\n", "", text)
+            text = re.sub("\n", " ", text)
             text = re.sub(re.escape(i['name']), "CARDNAME", text)
             i['oracle_text'] = text
         else:
