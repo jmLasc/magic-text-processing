@@ -31,6 +31,7 @@ def cleanData(data):
             text = i['oracle_text'] 
             text = re.sub("\n", " ", text)
             text = re.sub(re.escape(i['name']), "CARDNAME", text)
+            text = re.sub("—", " — ", text)
             i['oracle_text'] = text
         else:
             continue
