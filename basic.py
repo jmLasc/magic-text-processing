@@ -23,7 +23,7 @@ def cleanData(data):
     for i in data:
         # Skip extra cards
         st = i['set_type'] 
-        if st == 'funny' or st == "memorabilia":
+        if st == 'funny' or st == "memorabilia" or st == 'minigame':
             continue
 
         # Clean \n and sub out cardname 
