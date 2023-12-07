@@ -2,7 +2,7 @@
 CSCI2349 Semester Project: Group 9
 Topic: Magic the Gathering cards
 
-# Data Collection
+# Obtaining the Data
 
 This project analyzes the properties of *Magic: The Gathering* Cards. Data was obtained from [Scryfall](https://scryfall.com/docs/api/bulk-data). 
 
@@ -21,6 +21,7 @@ In order to properly use the dataset, download "Oracle Cards" from the above hyp
 `ngrams_colloc_tfidf.ipynb`
 - Finds the most frequent desired ngrams (presentation used 6grams)
 - Finds bigram collocations and filters through some of the unuseful results
+- Notably: also creates a text file for each card. If ran, you will have a folder, `cards`, that has each card saved as a txt file.
 - Creates a tf-idf model with pandas and runs a few queries based on it
 
 `word2vec.ipynb`
