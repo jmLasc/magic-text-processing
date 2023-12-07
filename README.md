@@ -22,7 +22,9 @@ In order to properly use the dataset, download "Oracle Cards" from the above hyp
 - Finds the most frequent desired ngrams (presentation used 6grams)
 - Finds bigram collocations and filters through some of the unuseful results
 - Notably: also creates a text file for each card. If ran, you will have a folder, `cards`, that has each card saved as a txt file.
-- Creates a tf-idf model with pandas and runs a few queries based on it
+- Creates a tf-idf model with pandas and runs a few queries based on it.
+    - Specifically, we ask for the count of cards that have 2 words in their top 15 tfidf score.
 
 `word2vec.ipynb`
 - Makes a w2v model of the data and runs a few queries.
+- Specifically, odd-term-out, analogies, and most similar tests are ran
